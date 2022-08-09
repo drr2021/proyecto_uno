@@ -2,11 +2,7 @@
     <header>
         todas las noticias
     </header>
-    <body>
-        <div>
-            <h1><a href="/">Ejemplo</a></h1>
-        </div>
-        
+    <body>    
         {% for noticia in notica_list %}
             <div style="border:4px ;">
                 <p> publicado: {{ noticia.published_date }}</p>
