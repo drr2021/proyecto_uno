@@ -1,0 +1,14 @@
+<html>
+    <header>
+        todas las noticias
+    </header>
+    <body>    
+        {% for noticia in notica_list %}
+            <div style="border:4px ;">
+                <p> publicado: {{ noticia.published_date }}</p>
+                <h2><a href="">{{ noticia.title }}</a></h2>
+                <p>{{ noticia.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+    </body>
+</html>

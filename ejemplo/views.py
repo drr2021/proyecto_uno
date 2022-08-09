@@ -6,6 +6,7 @@ from django.views import generic
 
 class ListaNoticia(generic.ListView):
     model = Noticia
+    template_name: 'noticia_list.html'
 
     def get_queryset(self):
         '''retorna las ultimas 5 publicaciones'''
@@ -14,6 +15,7 @@ class ListaNoticia(generic.ListView):
 
 class DetalleNoticia(generic.DetailView):
     model = Noticia
+    template_name: 'noticia_detail.html'
 
     def get_queryset(self):
         query = super(DetalleNoticia, self).get_queryset()

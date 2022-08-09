@@ -1,0 +1,22 @@
+<html>
+    <header>
+        muestra una sola noticia al detalle        
+    </header>
+    <body>
+        <h1>{{noticia.title}}</h1>
+        <ul>
+        {% for item in noticia.choice_set.all %}
+            <li>{{ item }}</li>
+            
+        {% endfor %}
+        </ul>
+        <div>
+            <ul>
+            <li>{{noticia.text}}</li>
+            <li>{{noticia.published_date}}</li>
+            <li>{{noticia.created_date}}</li>
+            <li>{{noticia.autor}}</li>
+            </ul>
+        </div>
+    </body>
+</html>
