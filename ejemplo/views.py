@@ -3,6 +3,8 @@ from .models import Noticia
 from django.views import generic
 
 # Create your views here.
+class Indice(generic.TemplateView):
+    template_name = 'base.html'
 
 class ListaNoticia(generic.ListView):
     model = Noticia
