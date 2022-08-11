@@ -3,9 +3,8 @@
 {% block content %}
     {% for noticia in noticia_list %}
         <div style="border:4px groove;">
-                <h4>publicado: {{noticia.published_date}}</h4>
-                <h5><a href="{% url 'ejemplo:detalleUnaNoticia' noticia.pk %}">{{noticia.title}}</a></h5>
-                <p>{{noticia.text|linebreaksbr}}</p>
-            </div>
+            <h5><a href="{% url 'ejemplo:detalleUnaNoticia' noticia.pk %}">{{noticia.title}}</a></h5>
+        </div>
+       
     {% endfor %}       
 {% endblock %}

@@ -1,6 +1,11 @@
-<h1>{{ noticia.noticia_titulo }}</h1>
-<ul>
-{% for detalle in noticia.choice_set.all %}
-    <li>{{ detalle.choice_text }}</li>
-{% endfor %}
-</ul
+{% extends "base.html" %}
+{% block title %}UNA NOTICIA{% endblock %}
+{% block content %}
+  <h1>Title: {{ noticia.title }}</h1>
+
+  <p><strong>Autor:</strong> {{ noticia.author }}</p> <!-- author detail link not yet defined -->
+  <p><strong>Nota:</strong> {{ noticia.text }}</p>
+  <p><strong>Creada:</strong> {{ noticia.created_date }}</p>
+  <p><strong>Publicada:</strong> {{ noticia.published_date }}</p>
+
+{% endblock %}

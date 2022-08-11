@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        {% load static %}
-        <link rel="stylesheet" type="text/css" href="{% static 'ejemplo/style.css' %}">
+        {% load static %}<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
         <title>{% block title %}Sitio Ejemplo{% endblock %}</title>
     </head>
     <body>
@@ -10,7 +9,7 @@
             {% block sidebar %}
                 <ul>
                     <li><a href="{% url 'ejemplo:ejemploNoticias' %}">Noticias</a></li>
-                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="http://127.0.0.1:8000/ejemplo/noticias4">ULTIMA NOTICIA al 11 de agosto</a></li>
                 </ul>
             {% endblock %}
         </div>

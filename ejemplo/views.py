@@ -3,8 +3,6 @@ from .models import Noticia
 from django.views import generic
 
 # Create your views here.
-class Indice(generic.TemplateView):
-    template_name = 'base.html'
 
 class ListaNoticia(generic.ListView):
     model = Noticia
@@ -15,10 +13,7 @@ class ListaNoticia(generic.ListView):
 
 
 class DetalleNoticia(generic.DetailView):
-    queryset = Noticia.objects.all()
+    model = Noticia
 
-    def get_object(self):
-        obj = super().get_object()
-        return obj
 
   
