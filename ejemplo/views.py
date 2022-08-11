@@ -6,17 +6,17 @@ from django.views import generic
 
 class ListaNoticia(generic.ListView):
     model = Noticia
-    template_name: 'noticia_list.html'
-
+    
     def get_queryset(self):
-        '''retorna las ultimas 5 publicaciones'''
-        return Noticia.objects.order_by('title')
+        '''retorna las noticias ordenada por fecha publicada'''
+        return Noticia.objects.order_by('-published_date')
 
 
 class DetalleNoticia(generic.DetailView):
-    model = Noticia
-    template_name: 'noticia_detail.html'
+    queryset = Noticia.objects.all()
 
-    def get_queryset(self):
-        query = super(DetalleNoticia, self).get_queryset()
-        return query
+    def get_object(self):
+        obj = super().get_object()
+        return obj
+
+  

@@ -1,0 +1,20 @@
+<html>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+    <header>
+        todas las noticias
+    </header>
+    <body>
+        <div>
+
+            {% for noticia in noticia_list %}
+                <div style="border:4px groove;">
+                        <h4>publicado: {{noticia.published_date}}</h4>
+                        <h5><a href="{% url 'ejemplo:detalleUnaNoticia' noticia.pk %}">{{noticia.title}}</a></h5>
+                        <p>{{noticia.text|linebreaksbr}}</p>
+                    </div>
+            {% endfor %}
+            
+        </div>
+    </body>
+</html>

@@ -1,0 +1,6 @@
+<h1>{{ noticia.titulo }}</h1>
+<ul>
+{% for detalle in noticia.choice_set.all %}
+    <li>{{ detalle.choice_text }}</li>
+{% endfor %}
+</ul
