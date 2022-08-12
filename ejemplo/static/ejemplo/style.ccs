@@ -1,3 +1,13 @@
-li a {
-    color: green;
+body {
+  background-color: lightgreen;
+}
+
+h1 {
+  color: green;
+  text-align: center;
+}
+
+p {
+  font-family: time ;
+  font-size: 10px;
 }
