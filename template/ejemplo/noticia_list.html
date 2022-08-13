@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block title %}TODAS LAS NOTICIAS{% endblock %}
 {% block content %}
+    
     {% for noticia in noticia_list %}
-        <div style="border:4px groove;">
-            <h5><a href="{% url 'ejemplo:detalleUnaNoticia' noticia.pk %}">{{noticia.title}}</a></h5>
+        <div class="list-group">
+            <a href="{% url 'ejemplo:detalleUnaNoticia' noticia.pk %}" class="list-group-item list-group-item-action list-group-item-info">{{noticia.title}}</a>
         </div>
-       
     {% endfor %}       
 {% endblock %}
