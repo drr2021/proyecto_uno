@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from .models import Noticia
 from django.views import generic
 
@@ -6,6 +5,7 @@ from django.views import generic
 
 class ListaNoticia(generic.ListView):
     model = Noticia
+    paginate_by = 10
     
     def get_queryset(self):
         '''retorna las noticias ordenada por fecha publicada'''
@@ -14,6 +14,7 @@ class ListaNoticia(generic.ListView):
 
 class DetalleNoticia(generic.DetailView):
     model = Noticia
+    
 
 
   

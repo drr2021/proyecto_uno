@@ -1,10 +1,38 @@
 {% extends "base.html" %}
-{% block title %}TODAS LAS NOTICIAS{% endblock %}
+{% block title %}<title>TODAS LAS NOTICIAS</title>{% endblock %}
 {% block content %}
-    
-    {% for noticia in noticia_list %}
-        <div class="list-group">
-            <a href="{% url 'ejemplo:detalleUnaNoticia' noticia.pk %}" class="list-group-item list-group-item-action list-group-item-info">{{noticia.title}}</a>
+<div role="tabpanel">
+    <!-- List group -->
+    <div class="list-group" id="myList" role="tablist">
+        {% for noticia in noticia_list %}
+        <div class="list-group" id="{{noticia.pk}}" role="tablist">
+            <a class="list-group-item list-group-item-action active" 
+                data-toggle="{{noticia}}"
+                href="ejemplo/noticias{{noticia.pk}}" 
+                role="tab">
+                {{noticia.title}}
+            </a>
         </div>
-    {% endfor %}       
+        {% endfor %}
+    </div>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane active" id="{{noticia.pk}}" role="tabpanel">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{ noticia.title }}</h5>
+                  
+                  <p class="card-text">{{ noticia.text }}</p>
+                  
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Autor: {{ noticia.autor }}</li>
+                  <li class="list-group-item">Creado: {{ noticia.created_date }}</li>
+                  <li class="list-group-item">Publicado: {{ noticia.published_date }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>       
+           
 {% endblock %}

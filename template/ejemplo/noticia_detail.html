@@ -1,11 +1,21 @@
-{% extends "base.html" %}
-{% block title %}UNA NOTICIA{% endblock %}
-{% block content %}
-  <h1>Title: {{ noticia.title }}</h1>
+{% block detalle %}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ noticia.title }}</h5>
+    
+    <p class="card-text">{{ noticia.text|escape|linebreaks }}</p>
+    
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Autor: {{ noticia.autor }}</li>
+    <li class="list-group-item">Creado: {{ noticia.created_date }}</li>
+    <li class="list-group-item">Publicado: {{ noticia.published_date }}</li>
+  </ul>
+  <div class="card-body">
+    
+    <a href="{% url 'ejemplo:detalleUnaNoticia' 1 %}" class="card-link">Anterior</a>
+    <a href="{% url 'ejemplo:detalleUnaNoticia' 2 %}" class="card-link">Siguiente</a>
+  </div>
 
-  <p><strong>Autor:</strong> {{ noticia.autor }}</p> <!-- author detail link not yet defined -->
-  <p><strong>Nota:</strong> {{ noticia.text }}</p>
-  <p><strong>Creada:</strong> {{ noticia.created_date }}</p>
-  <p><strong>Publicada:</strong> {{ noticia.published_date }}</p>
-
+</div>
 {% endblock %}
