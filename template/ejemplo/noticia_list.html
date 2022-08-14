@@ -5,34 +5,35 @@
     <!-- List group -->
     <div class="list-group" id="myList" role="tablist">
         {% for noticia in noticia_list %}
-        <div class="list-group" id="{{noticia.pk}}" role="tablist">
-            <a class="list-group-item list-group-item-action active" 
-                data-toggle="{{noticia}}"
-                href="ejemplo/noticias{{noticia.pk}}" 
-                role="tab">
-                {{noticia.title}}
-            </a>
-        </div>
+       
+        <a class="list-group-item list-group-item-action" 
+            data-toggle="noticia_detail"
+            href="{% url 'ejemplo:detalleUnaNoticia' noticia.pk %}" 
+            role="tab">
+            {{noticia.title}}
+        </a>
+        
         {% endfor %}
-    </div>
-    <!-- Tab panes -->
-    <div class="tab-content">
-        <div class="tab-pane active" id="{{noticia.pk}}" role="tabpanel">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">{{ noticia.title }}</h5>
-                  
-                  <p class="card-text">{{ noticia.text }}</p>
-                  
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Autor: {{ noticia.autor }}</li>
-                  <li class="list-group-item">Creado: {{ noticia.created_date }}</li>
-                  <li class="list-group-item">Publicado: {{ noticia.published_date }}</li>
-                </ul>
+    </div> 
+</div>
+<!-- Tab panes -->
+<div class="tab-content">
+    <div class="tab-pane active" id="myList" role="tabpanel">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><title>UNA NOTICIA</title></h5>
+              <p class="card-text">"data-toggle[0]"</p>
             </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Autor: "data-toggle[1]"</li>
+              <li class="list-group-item">Creado: "data-toggle[2]"</li>
+              <li class="list-group-item">Publicado: "data-toggle[3]"</li>
+            </ul>
         </div>
     </div>
-</div>       
+</div>
+<script>
+    $(function () {$('#myList a:last-child').tab('show')})
+</script>      
            
 {% endblock %}

@@ -1,21 +1,15 @@
-{% block detalle %}
-<div class="card" style="width: 18rem;">
+{% extends "base.html" %}
+{% block title %}<title>{{ noticia.title }}</title>{% endblock %}
+{% block content %}
+<div class="card" >
   <div class="card-body">
     <h5 class="card-title">{{ noticia.title }}</h5>
-    
-    <p class="card-text">{{ noticia.text|escape|linebreaks }}</p>
-    
+    <p class="card-text">{{ noticia.text|linebreaks }}</p>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Autor: {{ noticia.autor }}</li>
     <li class="list-group-item">Creado: {{ noticia.created_date }}</li>
     <li class="list-group-item">Publicado: {{ noticia.published_date }}</li>
   </ul>
-  <div class="card-body">
-    
-    <a href="{% url 'ejemplo:detalleUnaNoticia' 1 %}" class="card-link">Anterior</a>
-    <a href="{% url 'ejemplo:detalleUnaNoticia' 2 %}" class="card-link">Siguiente</a>
-  </div>
-
 </div>
 {% endblock %}
