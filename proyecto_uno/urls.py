@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic import TemplateView
 
 
@@ -24,3 +25,5 @@ urlpatterns = [
     path('ejemplo/',TemplateView.as_view(template_name='base.html'), name='ejemploIndice'),
     path('ejemplo/noticias',include('ejemplo.urls')),
 ]
+
+urlpatterns += staticfiles_urlpatterns()

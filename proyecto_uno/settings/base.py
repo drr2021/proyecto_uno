@@ -57,7 +57,7 @@ ROOT_URLCONF = 'proyecto_uno.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(os.path.dirname(BASE_DIR),'template')],
+        'DIRS': [BASE_DIR / 'template'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,7 +120,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = (
-    os.path.join(os.path.dirname(BASE_DIR),'static'),
+    os.path.join(BASE_DIR,'static'),
 )
 
 MEDIA_URL = 'media/'
